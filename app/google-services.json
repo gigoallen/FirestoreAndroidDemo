@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "895874493557",
+    "firebase_url": "https://firestore181010.firebaseio.com",
+    "project_id": "firestore181010",
+    "storage_bucket": "firestore181010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895874493557:android:af97a2a0e6fb05dd",
+        "android_client_info": {
+          "package_name": "com.gigoallen.firestore181010"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895874493557-gfsjtf0k69oh1mskb04s6vp1sftrar85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gigoallen.firestore181010",
+            "certificate_hash": "f21cf57f4dd5309b4a314656ba0d2fe54f3f3c9b"
+          }
+        },
+        {
+          "client_id": "895874493557-frdliem1uk3sq9nbaq9c6b111qgteq6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbKg55GZ9TFnH0rON1XsNY2263YFj2Fgg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895874493557-frdliem1uk3sq9nbaq9c6b111qgteq6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
