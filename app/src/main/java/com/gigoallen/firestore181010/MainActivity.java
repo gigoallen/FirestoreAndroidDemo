@@ -91,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadNotes(View view) {
 
-
-
        notebookRef.get()
                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                    @Override
@@ -104,10 +102,14 @@ public class MainActivity extends AppCompatActivity {
 
                            final Note note = documentSnapshot.toObject(Note.class);
 
+
                            String title = note.getTitle();
                            String description = note.getDescription();
 
-                           data += "Title: " + title + "\nDescription: " + description + "\n\n" ;
+                           note.setDocumentId(documentSnapshot.getId());
+                           String documentId = note.getDocumentId();
+
+                           data += "ID:" + documentId + "\nTitle: " + title + "\nDescription: " + description + "\n\n" ;
 
                        }
 
@@ -120,6 +122,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        notebookRef.addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                if(e != null){
+                    return;
+                }
+
+                String data = "";
+
+                for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots){
+
+                    Note note = documentSnapshot.toObject(Note.class);
+
+                    String title = note.getTitle();
+                    String description = note.getDescription();
+
+                    note.setDocumentId(documentSnapshot.getId());
+                    String documentId = note.getDocumentId();
+
+                    data += "ID:" + documentId + "\nTitle: " + title + "\nDescription: " + description + "\n";
+                }
+
+                textViewData.setText(data);
+            }
+        });
 
     }
 

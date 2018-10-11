@@ -1,8 +1,21 @@
 package com.gigoallen.firestore181010;
 
+import com.google.firebase.firestore.Exclude;
+
 public class Note {
     private String title;
     private String description;
+
+    private String documentId;
+
+    @Exclude
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
 
     public Note(){}
 
